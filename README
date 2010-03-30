@@ -1,0 +1,16 @@
+Simple example of vx32 usage. This library allows to run
+untrusted binary code inside a normal userspace executables.
+
+The code here presents simplistic scheduler, which runs
+untrusted binaries and a hello-world 'untrusted' code.
+
+
+To see it in action just type:
+
+    make
+
+
+Structure:
+  vx32example.c - main program, runs untrusted binaries
+  payload.c - untrusted code
+
