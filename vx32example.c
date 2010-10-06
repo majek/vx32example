@@ -15,15 +15,11 @@ int main(int argc, char *argv[]) {
 		abort();
 	}
 	char *elf_filename = argv[1];
-
-
-	int result = 0;
-	struct vxproc *p;
-
+	
 	vx32_siginit();
 
-	p = vxproc_alloc();
-
+	int result = 0;
+	struct vxproc *p = vxproc_alloc();
 	const char *p_argv[] = {elf_filename, NULL};
 	const char *p_env[] = {NULL, NULL};
 
@@ -71,7 +67,7 @@ int main(int argc, char *argv[]) {
 			break;
 
 		default:
-			printf("vxproc_run trap %#x\n", rc);
+			printf("vxproc_run trap %#x\n", rc);  // like segv
 			result = -1;
 			goto out;
 		}
